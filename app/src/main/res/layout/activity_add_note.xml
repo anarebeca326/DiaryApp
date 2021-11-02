@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="textStart"
+    tools:context=".AddNoteActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/DescriptionField"
+        android:layout_width="364dp"
+        android:layout_height="109dp"
+        android:hint="Description:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupMoods"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/TitleField"
+        android:layout_width="358dp"
+        android:layout_height="74dp"
+        android:hint="Note Title"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupMoods"
+        android:layout_width="370dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitleField"
+        app:layout_constraintVertical_bias="0.02">
+
+        <RadioButton
+            android:id="@+id/radioOptionSad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Sad" />
+
+        <RadioButton
+            android:id="@+id/radioOptionHappy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Happy" />
+
+        <RadioButton
+            android:id="@+id/radioOptionIdk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="I don't know" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupIcons"
+        android:layout_width="322dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.153">
+
+        <RadioButton
+            android:id="@+id/radioOptionIcon1"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            tools:layout_editor_absoluteX="26dp"
+
+            tools:layout_editor_absoluteY="541dp" />
+
+        <RadioButton
+            android:id="@+id/radioOptionIcon2"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="541dp" />
+
+        <RadioButton
+            android:id="@+id/radioOptionIcon3"
+            android:layout_width="64dp"
+            android:layout_height="46dp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="541dp" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="83dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionField"
+        app:layout_constraintVertical_bias="0.046"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="88dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionField"
+        app:layout_constraintVertical_bias="0.038"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="82dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionField"
+        app:layout_constraintVertical_bias="0.038"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/CreateButton"
+        android:layout_width="348dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dp"
+        android:text="Create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupIcons"
+        app:layout_constraintVertical_bias="0.638" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
