@@ -2,7 +2,10 @@ package com.example.deardiary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,6 +27,17 @@ public class NoteDetailActivity extends AppCompatActivity {
             moodView.setText("Mood: " + note.mood);
             TextView descriptionView = findViewById(R.id.description);
             descriptionView.setText(note.description);
+
+            Button editButton = findViewById(R.id.EditButton);
+
+            editButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(NoteDetailActivity.this, UpdateNoteActivity.class);
+                    intent.putExtra("note", note);
+                    startActivity(intent);
+                }
+            });
         }
     }
 }

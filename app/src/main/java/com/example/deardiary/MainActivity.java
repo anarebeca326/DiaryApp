@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.ListView);
         List<Note> list = new ArrayList<>();
-        list.add(new Note("title1", "lala", "vfujdegwvkc", 1));
-        list.add(new Note("title2", "lala", "vfujdegwvkc", 1));
-        list.add(new Note("pisici", "lala", "vfujdegwvkc", 1));
-        list.add(new Note("catei", "lala", "vfujdegwvkc", 1));
-        list.add(new Note("tit", "012461", "vfujdegwvkc", 1));
-        list.add(new Note("tit2", "lala", "vfujdegwvkc", 1));
+        list.add(new Note("note1", "HAPPY", "today i walked my dog", 1));
+        list.add(new Note("note2", "SAD", "today i did not walk my dog", 1));
+        list.add(new Note("note3", "HAPPY", "today i walked my dog", 1));
+        list.add(new Note("note4", "HAPPY", "today i walked my dog", 1));
+        list.add(new Note("note5", "HAPPY", "today i walked my dog", 1));
+        list.add(new Note("note6", "HAPPY", "today i walked my dog", 1));
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(arrayAdapter);
