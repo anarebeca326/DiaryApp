@@ -43,7 +43,9 @@ public class UpdateNoteActivity extends AppCompatActivity {
         EditText descriptionField = (EditText)findViewById(R.id.DescriptionField);
         descriptionField.setText(note.description);
 
-        switch(note.getMood()) {
+        String mood = note.getMood();
+
+        switch(mood) {
             case "HAPPY":
                 RadioButton radioHappy = (RadioButton) findViewById(R.id.radioOptionHappy);
                 radioHappy.setChecked(true);
@@ -55,21 +57,6 @@ public class UpdateNoteActivity extends AppCompatActivity {
             case "OK":
                 RadioButton radioOk = (RadioButton) findViewById(R.id.radioOptionIdk);
                 radioOk.setChecked(true);
-                break;
-        }
-
-        switch(note.getIcon()) {
-            case 1:
-                RadioButton radioIcon1 = (RadioButton) findViewById(R.id.radioOptionIcon1);
-                radioIcon1.setChecked(true);
-                break;
-            case 2:
-                RadioButton radioIcon2 = (RadioButton) findViewById(R.id.radioOptionIcon2);
-                radioIcon2.setChecked(true);
-                break;
-            case 3:
-                RadioButton radioIcon3 = (RadioButton) findViewById(R.id.radioOptionIcon3);
-                radioIcon3.setChecked(true);
                 break;
         }
     }
@@ -84,30 +71,19 @@ public class UpdateNoteActivity extends AppCompatActivity {
         RadioGroup radioGroupMoods = (RadioGroup) findViewById(R.id.radioGroupMoods);
         int selectedMoodRadioID = radioGroupMoods.getCheckedRadioButtonId();
         String mood = "";
+        int icon = 0;
         switch(selectedMoodRadioID) {
             case R.id.radioOptionHappy:
                 mood = "HAPPY";
+                icon = R.drawable.happy;
                 break;
             case R.id.radioOptionSad:
                 mood = "SAD";
+                icon = R.drawable.sad;
                 break;
             case R.id.radioOptionIdk:
                 mood = "OK";
-                break;
-        }
-
-        RadioGroup radioGroupIcons = (RadioGroup) findViewById(R.id.radioGroupIcons);
-        int selectedIconRadioID = radioGroupIcons.getCheckedRadioButtonId();
-        int icon = 0;
-        switch(selectedIconRadioID) {
-            case R.id.radioOptionIcon1:
-                icon = 1;
-                break;
-            case R.id.radioOptionIcon2:
-                icon = 2;
-                break;
-            case R.id.radioOptionIcon3:
-                icon = 3;
+                icon = R.drawable.neutral;
                 break;
         }
 

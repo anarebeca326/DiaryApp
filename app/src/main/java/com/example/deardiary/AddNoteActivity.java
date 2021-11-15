@@ -43,32 +43,22 @@ public class AddNoteActivity extends AppCompatActivity {
         RadioGroup radioGroupMoods = (RadioGroup) findViewById(R.id.radioGroupMoods);
         int selectedMoodRadioID = radioGroupMoods.getCheckedRadioButtonId();
         String mood = "";
+        int icon = 0;
         switch(selectedMoodRadioID) {
             case R.id.radioOptionHappy:
                 mood = "HAPPY";
+                icon = R.drawable.happy;
                 break;
             case R.id.radioOptionSad:
                 mood = "SAD";
+                icon = R.drawable.sad;
                 break;
             case R.id.radioOptionIdk:
                 mood = "OK";
+                icon = R.drawable.neutral;
                 break;
         }
 
-        RadioGroup radioGroupIcons = (RadioGroup) findViewById(R.id.radioGroupIcons);
-        int selectedIconRadioID = radioGroupIcons.getCheckedRadioButtonId();
-        int icon = 0;
-        switch(selectedIconRadioID) {
-            case R.id.radioOptionIcon1:
-                icon = 1;
-                break;
-            case R.id.radioOptionIcon2:
-                icon = 2;
-                break;
-            case R.id.radioOptionIcon3:
-                icon = 3;
-                break;
-        }
         return new Note(title, mood, description, icon);
     }
 }
