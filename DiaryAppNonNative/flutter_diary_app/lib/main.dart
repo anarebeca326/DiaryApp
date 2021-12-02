@@ -45,6 +45,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void _modifyNote(Note note, int index){
+    setState(() {
+      notes[index] = note;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                 subtitle: Text(notes[index].mood),
                 onTap: () {
                   Navigator.push( context, MaterialPageRoute(
-                      builder: (context) => DetailsPage(note: notes[index])
+                      builder: (context) => DetailsPage(note: notes[index], modifyNote: _modifyNote, index: index)
                   ));
                 },
               ),
